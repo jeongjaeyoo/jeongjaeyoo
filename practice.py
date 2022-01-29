@@ -4,3 +4,7 @@ print("Hello World!")
 
 "freshman is in charge"
 "I think I'm done with my code"
+
+"haha"
+"hoho"
+"lulu"
