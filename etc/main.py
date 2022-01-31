@@ -8,6 +8,14 @@ def main():
 
     client = commands.Bot(command_prefix=prefix,intents=intents)
 
+    @client.command(name='ping')
+    async def _ping(ctx):
+        await ctx.send("pong!")
+
+    @client.command(name='이름')
+    async def _이름(ctx):
+        await ctx.send(ctx.author.name)
+
     with open('token.txt','r') as f:
         token = f.read()
     
