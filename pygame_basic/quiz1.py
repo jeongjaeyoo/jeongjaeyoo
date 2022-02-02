@@ -34,6 +34,8 @@ to_x = 0
 # 이동 속도 (5 millisecond는 너무 큼)
 character_speed = 10
 
+enemy_speed = 10
+
 # 적 enemy 캐릭터 
 
 enemy = pygame.image.load("C:/Users/wjdwo/OneDrive/바탕 화면/Python/pygame_basic/enemy.png")
@@ -42,6 +44,7 @@ enemy_width = enemy_size[0] # 캐릭터의 가로 크기
 enemy_height = enemy_size[1] # 캐릭터의 세로 크기 
 enemy_x_pos = randint(0, int(screen_width) - enemy_width)  # 화면 가로의 절반 크기에 해당하는 곳에 캐릭터를 위치시킴 (가로 위치)
 enemy_y_pos = 0 # 화면 세로 크기 가장 아래에  해당하는 곳에 위치 (세로 위치)
+
 
 running = True  
 while running:
@@ -66,8 +69,9 @@ while running:
 
     character_x_pos += to_x 
     
+ 
     
-    enemy_y_pos += 0.3 * dt
+    enemy_y_pos += 10
 
     # 가로 경계값 처리 (세로 경계값은 할 필요 없음; 어차피 세로로 안 움직임 )
     if character_x_pos <0:
@@ -76,7 +80,7 @@ while running:
         character_x_pos = screen_width - character_width
 
 
-    
+
     # 똥 그림 출력 처리 
     if enemy_y_pos > screen_height:
         enemy_x_pos = randint(0, int(screen_width) - enemy_width)
